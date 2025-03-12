@@ -1,9 +1,9 @@
 certauth
-youtube-dl
+yt-dlp
 boto3
-uwsgi
 ujson
 pysocks
 lxml
 babel
 translate_toolkit
+gunicorn

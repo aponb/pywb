@@ -1,4 +1,4 @@
-ARG PYTHON=python:3.8
+ARG PYTHON=python:3.11-slim
 
 FROM $PYTHON
 
@@ -30,5 +30,4 @@ VOLUME /webarchive
 EXPOSE 8080
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
-CMD ["uwsgi", "/uwsgi/uwsgi.ini"]
-
+CMD ["gunicorn", "-c", "/pywb/gunicorn_config.py", "pywb.apps.wayback:application"]
